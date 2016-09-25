@@ -1,3 +1,4 @@
+<?php ?>
 <!doctype html>
 <html>
 <head>
@@ -9,46 +10,30 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 <link rel="stylesheet" href="admin.css">
-<script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
-<script>
-$(document).ready(function(){
-    $("span").focusin(function(){
-        
-    })
-});
-</script>
-
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 
 <body>
-<form class="login">
+<form class="login" action = "loginprocess.php" method="post">
   
   <fieldset>
     
     <legend class="legend">Login</legend>
     
     <div class="input">
-        <input type="email" placeholder="Email" required />
-      <span><i class="fa fa-envelope-o"></i></span>
+        <input type="text" placeholder="Username" name="username" required />
+      <span><i class="fa fa-user-secret"></i></span>
     </div>
     
     <div class="input">
-        <input type="password" placeholder="Password" required />
+        <input type="password" placeholder="Password" name="password" required />
       <span><i class="fa fa-lock"></i></span>
     </div>
     
-    <button type="submit" class="submit"><i class="fa fa-long-arrow-right"></i></button>
+    <button type="submit" class="submit" name="login"><i class="fa fa-long-arrow-right"></i></button>
     
   </fieldset>
-  
-  <div class="feedback">
-    login successful <br />
-    redirecting...
-  </div>
-  
 </form>
 </body>
 <script src="admin.js"></script>
