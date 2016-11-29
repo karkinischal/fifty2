@@ -55,6 +55,18 @@ Modules - reusable parts of our design
   clear: both;
 }
 
+/*projects------------------------------*/
+.center{text-align: center;}
+.fullpage .container{display:table; height:inherit;}
+.fullpage .absolute-center{display:table-cell;vertical-align: middle;}
+.portfolio ul li{position: relative;}
+.portfolio ul li .overlay{display: none;position: absolute;top: 0; right: 0; left: 0; bottom: 0; background:rgba(0,0,0,0.5); margin: 7px;}
+.portfolio ul li:hover .overlay{display: block;}
+.portfolio ul li .overlay span{position: absolute;width: 100%;text-align: center;top: 50%;}
+.portfolio ul li .overlay span a{border: 1px solid #fff;width: auto;display: inline-block;padding: 8px 20px;color: #fff;background: rgba(0,0,0,0.6);letter-spacing: 2px;word-spacing: 5px;}
+.portfolio ul li .overlay span a:hover{background: rgba(0,0,0,0.8);}
+
+
 /* -------------------------------- 
 
 Main components 
@@ -251,7 +263,7 @@ Main components
   color: #3d3536;
 }
 .cd-scrolling-bg.cd-color-3 {
-  background-color: #b4d7a8;
+  background-color: #fff;
   color: #3d3536;
 }
 @media only screen and (min-width: 768px) {
