@@ -15,6 +15,10 @@
                 include "classes/champion.php";
             }else if ($_GET['page'] == 'blog') {
                 include "classes/addblog.php";
+            }else if ($_GET['page'] == 'success'){
+                include "classes/success.php";
+            }else if ($_GET['page'] == 'fail'){
+                include "classes/fail.php";
             }
         }
     }

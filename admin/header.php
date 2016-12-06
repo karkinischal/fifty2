@@ -1,10 +1,7 @@
 <?php
   require("classes/database.php");
-  require("classes/user.php");
-  $user = new User();
-  $id = isset($_SESSION['uid'])? $_SESSION['uid']:'';
-  $user->setuid($id);
-  $data_list = $user->user_info();
+  //$obj = new Connection();
+  //$conn = $obj_getConnection();
 ?>
 
 <!DOCTYPE html>
@@ -39,11 +36,11 @@
             <!-- menu profile quick info -->
             <div class="profile">
               <div class="profile_pic">
-                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                <img src="pics/admin.png" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <span>Nischal</span>
+                <span>Admin</span>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -53,7 +50,7 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <h3>General</h3>
+                <h3>General Setting</h3>
                 <ul class="nav side-menu">
                   <li><a href="dashboard.php?page=dashboard"><i class="fa fa-home"></i>Home</span></a>
                   </li>
@@ -84,7 +81,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.0jpg" alt="">John Doe
+                    <img src="pics/admin.png" alt="">Chandani Neupane
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">

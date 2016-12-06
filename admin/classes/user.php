@@ -61,20 +61,6 @@ public function validateuser()
 //get the user information from database
 public function user_info()
 {
-    if(isset($_SESSION['uid']))
-    {
-    $id=$_SESSION['uid'];
-    $this->sql="SELECT * FROM admin WHERE id_admin='$id' "; 
-    $this->res=mysqli_query($this->conxn,$this->sql) or die($this->error=mysqli_query($this->conxn));
-    $this->numRows=mysqli_num_rows($this->res);
-    $this->arr=array();
-    if($this->numRows>0){
-        while($this->data=mysqli_fetch_assoc($this->res)){
-            array_push($this->arr,$this->data);
-        }
-    }
-    return $this->arr;
-    }
 }
 //inset the new user
 public function adduser(){
