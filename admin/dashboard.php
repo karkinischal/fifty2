@@ -5,8 +5,17 @@
      }
      else{
         include "header.php";
-        include "footer.php";
-     }
+        //include "footer.php";
+        if(isset($_GET['page'])){
+            if($_GET['page'] == 'dashboard'){
+                include "classes/welcome.php";
+            }else if($_GET['page'] == 'about'){
+                include "classes/about.php";
+            }else if($_GET['page'] == 'champion'){
+                include "classes/champion.php";
+            }else if ($_GET['page'] == 'blog') {
+                include "classes/addblog.php";
+            }
+        }
+    }
 ?>
-<br>
-<a href="logout.php">logout</a>

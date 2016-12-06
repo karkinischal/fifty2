@@ -2,7 +2,7 @@
         <footer>
           <div class="pull-left">
             <?php
-              include('test.php');
+              echo "welcome";
             ?>
              <a href="https://colorlib.com">Colorlib</a>
           </div>

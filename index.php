@@ -10,8 +10,17 @@
 		<div class="cd-scrolling-bg cd-color-2" id="about">
 			<div class="cd-container">
 			<h1 class="who">WHO ARE WE</h1>
-				<p>'50 Female Champions' is a fellowship program that is designed to recognize 50 female leaders of the society whose works has been an agent for social contribution and change, and provide them with a platform to further strengthen their skills to become a bigger contributing factor in the society. This program is led by We Inspire Nepal in support from UNESCO. The program is to begin with two days intensive training followed by a well-designed community mobilization that shall address some very important issues of adolescent girls mostly including psychological and physical change, sexual health education, empowerment etc.
-				</p>
+				<?php  
+					include('admin/classes/database.php');
+    				$obj = new Connection();
+    				$conn = $obj->getConnection();
+    				$sql = "SELECT * FROM home_posts WHERE post_type LIKE 'about'";
+    				$result = $conn->query($sql);
+    				if ($result->num_rows > 0){
+        				$row = $result->fetch_assoc();
+    				}
+    				echo '<p>'.$row[post_cont].'</p>';
+				?>
 			</div> <!-- cd-container -->
 		</div> <!-- cd-scrolling-bg -->
 
@@ -62,9 +71,14 @@
 
 		<div class="cd-scrolling-bg cd-color-1">
 			<div class="cd-container">
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi, mollitia, repellendus sapiente repudiandae labore rerum amet culpa inventore, modi non. Quo nisi veritatis vitae nam, labore fugit. Inventore culpa iusto, officia exercitationem. Voluptates quibusdam odit odio incidunt consequatur, consectetur aspernatur optio vitae molestias, quas repellendus fugit ullam culpa, eligendi et dignissimos voluptatibus illum? Molestias aliquam nostrum quasi ipsa culpa, iusto explicabo ut error, consequuntur enim temporibus, adipisci tempora voluptate, id consequatur mollitia eveniet blanditiis. Illo quod repellendus alias? Cum rem doloremque adipisci accusantium? Saepe, necessitatibus!
-				</p>
+			<?php
+				$sql = "SELECT * FROM home_posts WHERE post_type LIKE 'champion'";
+    				$result = $conn->query($sql);
+    				if ($result->num_rows > 0){
+        				$row = $result->fetch_assoc();
+    				}
+    				echo '<p>'.$row[post_cont].'</p>';
+			?>
 			</div> <!-- cd-container -->
 		</div> <!-- cd-scrolling-bg -->
 

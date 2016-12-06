@@ -1,3 +1,17 @@
+<?php
+    include('../admin/classes/database.php');
+    $obj = new Connection();
+    $conn = $obj->getConnection();
+    $sql = 'SELECT * FROM blog_posts where post_id='.$_GET['id'];
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0){
+        $row = $result->fetch_assoc();
+    }
+    if ($row[post_id]=='') {
+        header('Location:./');
+    }
+
+?>
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -26,25 +40,15 @@
         <div id="main-content" class="col-2-3">
             <div class="wrap-content">
                 <?php
-                    include('../admin/classes/database.php');
-                    $obj = new Connection();
-                    $conn = $obj->getConnection();
-                    $sql = "SELECT * FROM blog_posts";
-                    $result = $conn->query($sql);
-                    if ($result->num_rows > 0) {
-                        while($row = $result->fetch_assoc()){
                     echo'<article>';
                     echo'<div class="art-header">';
                     echo'<a href="viewpost.php?id='.$row[post_id].'"><h3>'.$row[post_title].'</h3></a>';
                     echo'<div class="info">'.'by '.$row[post_author].' , '.date('jS M Y',strtotime($row['post_date'])).'</div>';
                     echo'</div>';
                     echo'<div class="art-content">';
-                    echo'<p>'.$row[post_desc].'</p>';
+                    echo'<p>'.$row[post_cont].'</p>';
                     echo'</div>';
-                    echo'<a class="button button02" href="viewpost.php?id='.$row[post_id].'"> VIEW MORE</a>';
-                echo'</article>';
-                        }
-                }
+                    echo'</article>';
                     $conn->close();
                 ?>    
             </div>
@@ -60,23 +64,6 @@
                         <p>'50 Female Champions' is a fellowship program that is designed to recognize 50 female leaders of the society whose works has been an agent for social contribution and change, and provide them with a platform to further strengthen their skills to become a bigger contributing factor in the society. This program is led by We Inspire Nepal in support from UNESCO. The program is to begin with two days intensive training followed by a well-designed community mobilization that shall address some very important issues of adolescent girls mostly including psychological and physical change, sexual health education, empowerment etc.</p>
                     </div>
                 </div>
-
-                <div class="widget wid-gallery">
-                    <div class="wid-header">
-                        <h5>Gallery</h5>
-                    </div>
-                    <div class="wid-content">
-                        <a href="#"><img src="images/11.jpg"></a>
-                        <a href="#"><img src="images/10.jpg"></a>
-                        <a href="#"><img src="images/9.jpg"></a>
-                        <a href="#"><img src="images/8.jpg"></a>
-                        <a href="#"><img src="images/7.jpg"></a>
-                        <a href="#"><img src="images/6.jpg"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </section>
     <!-- js -->
     <script src="js/classie.js"></script>

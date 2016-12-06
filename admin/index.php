@@ -31,8 +31,8 @@
   </fieldset>
 </form>
 </body>
-<script src="admin.js"></script>
-<script type="text/javascript" src="admin.js"></script>
+<script src="includes/admin.js"></script>
+<script type="text/javascript" src="includes/admin.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </html>

@@ -7,11 +7,9 @@ class User extends Connection
     private $lastname;
     private $password;
     private $login_date;
-
     public function setuid($ud=''){
         return $this->admin_id=$ud;
     }
-
     public function getAdmin_username(){
         return $this->admin_username;
     }
@@ -30,15 +28,12 @@ class User extends Connection
     public function getPassword(){
         return $this->password;
     }
-
     public function setAdmin_username($uname=''){
         $this->admin_username=$uname;
     }
-
     public function setPassword($upass=''){
         $this->password=$upass;
     }
-
     public function setlogin_date(){
         $this->login_date=date('y-m-d h:i:s');
     }
@@ -62,11 +57,8 @@ public function validateuser()
     else{
         return FALSE;
     }
-
 }
-
 //get the user information from database
-
 public function user_info()
 {
     if(isset($_SESSION['uid']))
@@ -84,7 +76,6 @@ public function user_info()
     return $this->arr;
     }
 }
-
 //inset the new user
 public function adduser(){
     $this->sql= "INSERT INTO admin (id_admin,username,password) 
@@ -98,7 +89,6 @@ public function adduser(){
         return false;
     }
 }
-
 //display content of whole table
 public function getalluser(){    
     $this->sql= "SELECT * FROM admin";
@@ -131,7 +121,6 @@ public function deleteuser()
        
         //delete the file
         if(file_exists($_SERVER['DOCUMENT_ROOT'].$destination)){
-
         
                 if(unlink($_SERVER['DOCUMENT_ROOT'].$destination)){
             //file removed from the server
@@ -151,21 +140,14 @@ public function deleteuser()
                     }
                     //unlink ends
                     }
-
                 
                 else{
                      return FALSE;
                 }
         }//delete file ends
-
    
-
    
-
 }//function ends
-
-
-
 public function updateuser()
 {
     $this->sql="UPDATE admin_data SET admin_name='$this->Admin_username', admin_email='$this->admin_email', password='$this->password',admin_img='$this->img_name' WHERE admin_id ='$this->admin_id'";
@@ -179,13 +161,7 @@ public function updateuser()
 }
 else
         return false;
-
-
   
 }
-
 */
 }//class ends
-
-
-

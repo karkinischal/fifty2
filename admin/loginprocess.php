@@ -3,7 +3,6 @@
     //load all required classes
     require_once("classes/database.php");
     require_once("classes/user.php");
-
     //creating user object
     $user = new User();
     
@@ -15,14 +14,12 @@
     $user->setAdmin_username($username);
     $user->setPassword($password);
     $user->setlogin_date();
-
     //validation check
     $flag = $user->validateuser();
-
     //redirecting user
     if ($flag == true) {
         $_SESSION['loggedin']=true;
-        header("location:dashboard.php");
+        header("location:dashboard.php?page=dashboard");
     }
     else{
         header("location:error.php");
